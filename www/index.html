@@ -72,7 +72,7 @@
    "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
    push.on('registration', function(data) {
    
-   (data.registrationId);
+   alert(data.registrationId);
    $("#gcm_id").html(data.registrationId);
    });
    push.on('notification', function(data) {
