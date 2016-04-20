@@ -67,7 +67,7 @@
 			alert('error:'+ error );
 		}*/
 		
-		
+	alert('ll');	
 	var push = PushNotification.init({ "android": {"senderID": "168738893245"},
    "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
    push.on('registration', function(data) {
@@ -94,14 +94,14 @@
 
 <body>
     
-	<p id="gcm_id"></p>
+	<p id="gcm_id">id::::</p>
     <script type="text/javascript" src="PushNotification.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
        //app.initialize() ;
 		document.addEventListener("deviceready", onDeviceReady, false);  
 		function onDeviceReady() {
-                alert('hi asif1');   
+              //  alert('hi asif1');   
 			    pushNotification = window.plugins.PushNotification; 
 			       alert('hi asif2'); 			    
 			    if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ) {    alert('hi asif3'); 
@@ -124,6 +124,7 @@
 			alert('error:'+ error );
 		}*/  
     </script>
+	
 </body>
 
 </html>
