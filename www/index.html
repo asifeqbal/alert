@@ -45,15 +45,33 @@
 		document.addEventListener("deviceready", onDeviceReady, false);  
 		function onDeviceReady() {
                 alert('hi asif1');   
-			    pushNotification = window.plugins.PushNotification; 
+			   /* pushNotification = window.plugins.PushNotification; 
 			       alert('hi asif2'); 			    
 			    if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ) {    alert('hi asif3'); 
 						 pushNotification.register(tokenHandler, errorHandler, {"senderID":"168738893245","ecb":"onNotification"});		// required!
 					} else {   alert('hi nagesh4'); 
                     	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
-                	}
+                	}*/
 					
-					
+			var push = PushNotification.init({ "android": {"senderID": "168738893245"},
+   "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+   push.on('registration', function(data) {
+   
+   alert(data.registrationId);
+   $("#gcm_id").html(data.registrationId);
+   });
+   push.on('notification', function(data) {  
+   alert(data.message);
+   alert(data.title+" Message: " +data.message);
+   // data.title,
+   // data.count,
+   // data.sound,
+   // data.image,
+   // data.additionalData
+   });
+   push.on('error', function(e) {
+   alert(e.message);
+   });		
          }
         
 		// Handle push token result
@@ -70,25 +88,7 @@
 		}*/
 		
 	alert('ll');	
-	var push = PushNotification.init({ "android": {"senderID": "168738893245"},
-   "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
-   push.on('registration', function(data) {
-   
-   alert(data.registrationId);
-   $("#gcm_id").html(data.registrationId);
-   });
-   push.on('notification', function(data) {
-   alert(data.message);
-   alert(data.title+" Message: " +data.message);
-   // data.title,
-   // data.count,
-   // data.sound,
-   // data.image,
-   // data.additionalData
-   });
-   push.on('error', function(e) {
-   alert(e.message);
-   });*/
+	
     </script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
