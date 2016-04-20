@@ -38,6 +38,35 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 	<script type="text/javascript" src="phonegap.js"></script>
+	<script type="text/javascript" src="PushNotification.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>  
+    <script type="text/javascript">
+       //app.initialize() ;
+		document.addEventListener("deviceready", onDeviceReady, false);  
+		function onDeviceReady() {
+                alert('hi asif1');   
+			    pushNotification = window.plugins.PushNotification; 
+			       alert('hi asif2'); 			    
+			    if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ) {    alert('hi asif3'); 
+						 pushNotification.register(tokenHandler, errorHandler, {"senderID":"168738893245","ecb":"onNotification"});		// required!
+					} else {   alert('hi nagesh4'); 
+                    	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
+                	}
+         }
+        
+		// Handle push token result
+		function tokenHandler (result) {
+			// Your iOS push server needs to know the token before it can push to this device
+			// here is where you might want to send it the token for later use.
+			alert('device token = ' + result);
+
+			//getMyUi(result);              
+		}
+		   
+		/*function errorHandler (error) {
+			alert('error:'+ error );
+		}*/
+    </script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
 </head>
