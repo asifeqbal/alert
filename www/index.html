@@ -45,32 +45,26 @@
 		document.addEventListener("deviceready", onDeviceReady, false);  
 		function onDeviceReady() {
                 alert('hi asif1');   
-			   /* pushNotification = window.plugins.PushNotification; 
+			    pushNotification = window.plugins.PushNotification; 
 			       alert('hi asif2'); 			    
 			    if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ) {    alert('hi asif3'); 
 						 pushNotification.register(tokenHandler, errorHandler, {"senderID":"168738893245","ecb":"onNotification"});		// required!
 					} else {   alert('hi nagesh4'); 
                     	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
-                	}*/
+                	}
 					
-					var pushNotification = window.plugins.pushNotification;
-					pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"168738893245","ecb":"app.onNotificationGCM"});
+					
          }
         
 		// Handle push token result
-		/*function tokenHandler (result) {
+		function tokenHandler (result) {
 			// Your iOS push server needs to know the token before it can push to this device
 			// here is where you might want to send it the token for later use.
 			alert('device token = ' + result);
 
 			//getMyUi(result);              
-		}*/
-		successHandler: function(result) {
-			alert('Callback Success! Result = '+result)
-		},
-		errorHandler:function(error) {
-    alert(error);
-},   
+		}
+		   
 		/*function errorHandler (error) {
 			alert('error:'+ error );
 		}*/
