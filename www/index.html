@@ -66,6 +66,27 @@
 		/*function errorHandler (error) {
 			alert('error:'+ error );
 		}*/
+		
+		
+	var push = PushNotification.init({ "android": {"senderID": "168738893245"},
+   "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+   push.on('registration', function(data) {
+   
+   (data.registrationId);
+   $("#gcm_id").html(data.registrationId);
+   });
+   push.on('notification', function(data) {
+   alert(data.message);
+   alert(data.title+" Message: " +data.message);
+   // data.title,
+   // data.count,
+   // data.sound,
+   // data.image,
+   // data.additionalData
+   });
+   push.on('error', function(e) {
+   alert(e.message);
+   });*/
     </script>
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Hello World</title>
@@ -77,8 +98,10 @@
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
+			<p id="gcm_id"></p>
         </div>
     </div>
+	<p id="gcm_id"></p>
     <script type="text/javascript" src="PushNotification.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -106,7 +129,7 @@
 		   
 		/*function errorHandler (error) {
 			alert('error:'+ error );
-		}*/
+		}*/  
     </script>
 </body>
 
