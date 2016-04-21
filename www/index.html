@@ -54,15 +54,15 @@
                 	}*/
 					
 			var push = PushNotification.init({ "android": {"senderID": "168738893245"},
-   "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
-   push.on('registration', function(data) {
-   
-   alert(data.registrationId);
-   $("#gcm_id").html(data.registrationId);
-   });
-   push.on('notification', function(data) {  
-   alert(data.message);
-   alert(data.title+" Message: " +data.message);
+				   "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+				   push.on('registration', function(data) {
+				   
+				   alert(data.registrationId);
+				   $("#gcm_id").html(data.registrationId);
+				   });
+				   push.on('notification', function(data) {  
+				   alert(data.message);
+				   alert(data.title+" Message: " +data.message);
    // data.title,
    // data.count,
    // data.sound,
