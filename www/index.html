@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
     distributed with this work for additional information
@@ -20,137 +18,91 @@
     under the License.
 -->
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- link rel="stylesheet" type="text/css" href="css/index.css" / -->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <script type="text/javascript">
+		document.addEventListener("deviceready",onDeviceReady,false);
+		function onDeviceReady(){
+		    alert('readyhj');
+			alert("Device Readyui")
+			var push = PushNotification.init({ "android": {"senderID": "718397155156"},
+			"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-	<script type="text/javascript" src="phonegap.js"></script>
-	<script type="text/javascript" src="PushNotification.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>  
-    <script type="text/javascript">
-       //app.initialize() ;
-		document.addEventListener("deviceready", onDeviceReady, false);  
-		function onDeviceReady() {
-                alert('hi asif1');   
-			   /* pushNotification = window.plugins.PushNotification; 
-			       alert('hi asif2'); 			    
-			    if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ) {    alert('hi asif3'); 
-						 pushNotification.register(tokenHandler, errorHandler, {"senderID":"168738893245","ecb":"onNotification"});		// required!
-					} else {   alert('hi nagesh4'); 
-                    	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
-                	}*/
-					}
-					//{
-				/*	"registration_ids": ["hib184a2c51236d3d2"],
-					"data": {
-						"title": "My Title",
-						"message": "My first message",
-						"style": "inbox",
-						"summaryText": "There are %n% notifications"
-					}
-				}
-					var gcm = require('node-gcm');
-				// Replace these with your own values.
-				var apiKey = "AIzaSyC7VX0bZcSof0Gkb3VMoz78rLQlFxdHcZQ";
-				var deviceID = "hib184a2c51236d3d2";
-				var service = new gcm.Sender(apiKey);
-				var message = new gcm.Message();
-				message.addData('title', 'My Title');
-				message.addData('message', 'My first message');
-				message.addData('style', 'inbox');
-				message.addData('summaryText', 'There are %n% notifications');
-				service.send(message, { registrationTokens: [ deviceID ] }, function (err, response) {
-					  if(err){ 
-					alert(err);}
-					else {   alert(response);}
-				});*/
-		/*	var push = PushNotification.init({ "android": {"senderID": "168738893245"},
-   "ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
-   push.on('registration', function(data) {
-   
-   alert(data.registrationId);
-   $("#gcm_id").html(data.registrationId);
-   });
-   push.on('notification', function(data) {  
-   alert(data.message);
-   alert(data.title+" Message: " +data.message);
-   // data.title,
-   // data.count,
-   // data.sound,
-   // data.image,
-   // data.additionalData
-   });
-   push.on('error', function(e) {
-   alert(e.message);
-   });		
-         }
-        
-		// Handle push token result
-		function tokenHandler (result) {
-			// Your iOS push server needs to know the token before it can push to this device
-			// here is where you might want to send it the token for later use.
-			alert('device token = ' + result);
+			push.on('registration', function(data) {
+			alert(data.registrationId);
+			$("#gcm_id").html(data.registrationId);
+			});
+			alert("hhhj");
+			push.on('notification', function(data) {
+			alert(data.message);
+			alert(data.title+" Message: " +data.message);
+			// data.title,
+			// data.count,
+			// data.sound,
+			// data.image,
+			// data.additionalData
+			});
 
-			//getMyUi(result);              
+			push.on('error', function(e) {
+			alert(e.message);
+			});
 		}
-		      
-		/*function errorHandler (error) {
-			alert('error:'+ error );
-		}*/
-		
-	alert('ll');	
-	
-    </script>
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
-</head>
+		</script>
+    </head>
+    <body>
+	    <nav>
+	   	    <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Push Demo</a>
+		    </div>
+		</nav>
+		<iframe src="http://app.pradict.com" onload="onDeviceReady();" name="container-frame" id="container-frame" seamless="seamless" width="100%" height="100%" style="overflow-x:hidden; border:none;"></iframe>
+		<div class="row">
+		  <div class="col s12 m6">
+		    <div class="card darken-1">
+		      <div class="card-content black-text">
+		        <span class="card-title black-text">Registration ID</span>
+		        <p id="regId">Requested</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<p id="gcm_id">new id::</p>
+		<div id="cards"></div>
 
-<body>
-    
-	<p id="gcm_id">id::::</p>
-    <script type="text/javascript" src="PushNotification.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-       //app.initialize() ;
-		document.addEventListener("deviceready", onDeviceReady, false);  
-		function onDeviceReady() {
-              //  alert('hi asif1');   
-			    pushNotification = window.plugins.PushNotification; 
-			       alert('hi asif2'); 			    
-			    if (device.platform == 'android' || device.platform == 'Android' || device.platform == 'amazon-fireos' ) {    alert('hi asif3'); 
-						 pushNotification.register(tokenHandler, errorHandler, {"senderID":"168738893245","ecb":"onNotification"});		// required!
-					} else {   alert('hi nagesh4'); 
-                    	pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
-                	}
-         }
-        
-		// Handle push token result
-		function tokenHandler (result) {
-			// Your iOS push server needs to know the token before it can push to this device
-			// here is where you might want to send it the token for later use.
-			alert('device token = ' + result);
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+		document.addEventListener("deviceready",onDeviceReady,false);
+			
+			function onDeviceReady()     
+			{
+				alert('hi');
+				var push = PushNotification.init({ "android": {"senderID": "718397155156"},
+				"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
-			//getMyUi(result);              
-		}
-		   
-		/*function errorHandler (error) {
-			alert('error:'+ error );
-		}*/  
-    </script>
-	
-</body>
-
+				push.on('registration', function(data) {
+				alert(data.registrationId);
+				$("#gcm_id").html(data.registrationId);
+				});
+				alert("hh");
+				push.on('notification', function(data) {
+				alert(data.message);
+				alert(data.title+" Message: " +data.message);
+				// data.title,
+				// data.count,
+				// data.sound,
+				// data.image,
+				// data.additionalData
+				});
+			}	
+		</script>
+    </body>
 </html>
