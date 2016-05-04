@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.robhaenenpradict.pradict" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.robhaenenasif.asif" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Pradict</name>
     <description>
        A new pradict APP
     </description>
-    <author email="asif@vrisini.com" href="http://app.test.com">
+    <author email="asif.eqbal@vrisini.com" href="http://app.test.com">
         Pradict Team
     </author>
     <content src="index.html" />
