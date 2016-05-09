@@ -23,8 +23,7 @@
 	<plugin name="cordova-plugin-schedule" source="npm" />
    <plugin name="org.transistorsoft.cordova.plugin.background.fetch" spec="2.0.2" source="pgb" />
 	
-    <preference name="permissions" value="none" />
-	<uses-permission android:name=“android.permission.WRITE_EXTERNAL_STORAGE” />
+    <preference name="permissions" value="display" />
 	<preference name="fullscreen" value="true" />
 	<preference name="SplashScreen" value="splash"/>
     <preference name="SplashScreenDelay" value="4000" />
