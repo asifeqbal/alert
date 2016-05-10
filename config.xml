@@ -47,7 +47,7 @@
 	
 
   
-	<access origin="http://app.pradict.com/" />  
+	<access origin="http://app.pradict.com" subdomains="true" />  
 	<access origin="facebook.com" />
   
 	<icon src="icon.png" />
