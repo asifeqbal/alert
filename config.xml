@@ -46,7 +46,7 @@
 
 	
 
-    <access origin="*" />
+    
 	<access origin="app.pradict.com" />
 	<access origin="facebook.com" />
   
