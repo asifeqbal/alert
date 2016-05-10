@@ -22,7 +22,8 @@
     <plugin name="org.apache.cordova.globalization" spec="1.0.3"/>   
 	<plugin name="cordova-plugin-schedule" source="npm" />
    <plugin name="org.transistorsoft.cordova.plugin.background.fetch" spec="2.0.2" source="pgb" />
-	
+	<plugin name="com.synconset.imagepicker" spec="1.0.4" source="pgb" />
+	     
     <preference name="permissions" value="true" />
 	<preference name="fullscreen" value="true" />
 	<preference name="SplashScreen" value="splash"/>
